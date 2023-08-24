@@ -30,10 +30,18 @@ public class Program {
 
         long startTime = System.currentTimeMillis(); // секунды выполнения задачи ( начало)
 
-        System.out.printf("Число Фибоначчи для номера %d равно: %d (Рекурсия) \n", lastNumber,
+        System.out.printf("Число Фибоначчи для номера %d равно: %d (РЕКУРСИЯ) \n", lastNumber,
                 fb1(lastNumber, counter));
+        System.out.println("Кол-во итераций:" + counter.get());
 
         long endTime = System.currentTimeMillis();
+        System.out.printf("Операция выполнена за %d мс.", endTime - startTime);
+
+        counter.set(0);
+        startTime = System.currentTimeMillis();
+        System.out.printf("Число Фибоначчи для номера %d равно: %d\n", lastNumber, fb2(lastNumber, counter));
+        System.out.println("Кол-во итераций: " + counter.get());
+        endTime = System.currentTimeMillis();
         System.out.printf("Операция выполнена за %d мс.", endTime - startTime);
 
     }
